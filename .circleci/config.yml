@@ -62,7 +62,6 @@ jobs:
           command: |
             docker build -t cci-demo-docker .
             docker login -u 'URITEST' -p '1!LabStudy' quay.io
-            docker run quay.io/uritest/cci-demo-docker
             docker tag cci-demo quay.io/uritest/cci-demo-docker:latest
             docker push quay.io/uritest/cci-demo-docker:latest
 

@@ -9,7 +9,7 @@ jobs:
         environment:
           POSTGRES_USER: ubuntu
           POSTGRES_DB: contacts
-    working_directory: /go/src/github.com/circleci/cci-demo-docker
+    working_directory: /go/src/github.com/uritest/circleci-docker
 
     environment:
       TEST_RESULTS: /tmp/test-results
@@ -33,7 +33,7 @@ jobs:
           name: Run unit tests
           environment:
             DATABASE_URL: "postgres://ubuntu@localhost:5432/contacts?sslmode=disable"
-            DB_MIGRATIONS: /go/src/github.com/circleci/cci-demo-docker/db/migrations
+            DB_MIGRATIONS: /go/src/github.com/uritest/circleci-docker/db/migrations
           command: |
             set -ou pipefail
             trap "go-junit-report <${TEST_RESULTS}/go-test.out > ${TEST_RESULTS}/go-test-report.xml" EXIT

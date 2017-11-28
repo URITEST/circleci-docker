@@ -62,6 +62,7 @@ jobs:
             docker login -u 'URITEST' -p '1!LabStudy' quay.io
             docker tag circleci/cci-demo quay.io/uritest/cci-demo-docker:latest
             docker push quay.io/uritest/cci-demo-docker:latest
+            
       - store_artifacts:
           path: /tmp/test-results
           destination: raw-test-output

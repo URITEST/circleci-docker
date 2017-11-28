@@ -61,7 +61,7 @@ jobs:
             docker build -t circleci/cci-demo-docker:LATEST .
             docker login -u 'URITEST' -p '1!LabStudy' quay.io
             docker run quay.io/uritest/cci-demo-docker
-            docker tag circleci/cci-demo:LATEST quay.io/uritest/cci-demo-docker:latest
+            docker tag circleci/cci-demo-docker:LATEST quay.io/uritest/cci-demo-docker:latest
             docker push quay.io/uritest/cci-demo-docker:latest
             
       - store_artifacts:

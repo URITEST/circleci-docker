@@ -58,10 +58,15 @@ jobs:
           command: make
 
       - run:
-          name: Build and push Docker image
+          name: Login to Quay.io
           command: |
             docker login -u 'URITEST' -p '1!LabStudy' quay.io
-            docker build -t cci-demo-docker .
+            docker login -u 'URITEST' -p '1!LabStudy' quay.io
+            
+      - run:
+          name: Build and push Docker image
+          command: |
+          docker build -t cci-demo-docker .
             docker tag cci-demo quay.io/uritest/cci-demo-docker:latest
             docker push quay.io/uritest/cci-demo-docker:latest
 

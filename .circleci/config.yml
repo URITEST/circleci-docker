@@ -59,7 +59,7 @@ jobs:
           name: Build and push Docker image
           command: |
             docker build -t quay.io/uritest/cci-demo-docker:latest .
-            docker login -u 'URITEST' -p '1!LabStudy' quay.io
+            docker login -u '$QUAY_USERNAME' -p '$QUAY_PASSWORD' quay.io
             docker run quay.io/uritest/cci-demo-docker
             docker push quay.io/uritest/cci-demo-docker:latest
             

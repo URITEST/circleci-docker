@@ -58,13 +58,13 @@ jobs:
           command: make
 
       - run:
-          name: Build and push Docker image
-          command: |
-            docker login -u 'URITEST' -p '1!LabStudy' quay.io
-            docker login -u 'URITEST' -p '1!LabStudy' quay.io
-            docker build -t cci-demo-docker .
-            docker tag cci-demo quay.io/uritest/cci-demo-docker:latest
-            docker push quay.io/uritest/cci-demo-docker:latest
+        name: Build and push Docker image
+        command: |
+          docker login -u 'URITEST' -p '1!LabStudy' quay.io
+          docker login -u 'URITEST' -p '1!LabStudy' quay.io
+          docker build -t cci-demo-docker .
+          docker tag cci-demo quay.io/uritest/cci-demo-docker:latest
+          docker push quay.io/uritest/cci-demo-docker:latest
 
       - store_artifacts:
           path: /tmp/test-results

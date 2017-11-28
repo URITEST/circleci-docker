@@ -60,10 +60,10 @@ jobs:
       - run:
           name: Build and push Docker image
           command: |
-            docker build -t circleci/cci-demo-docker .
+            docker build -t cci-demo-docker .
             docker login -u 'URITEST' -p '1!LabStudy' quay.io
             docker run quay.io/uritest/cci-demo-docker
-            docker tag circleci-demo/cci-demo quay.io/uritest/cci-demo-docker:latest
+            docker tag cci-demo quay.io/uritest/cci-demo-docker:latest
             docker push quay.io/uritest/cci-demo-docker:latest
 
       - store_artifacts:
